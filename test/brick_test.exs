@@ -29,9 +29,14 @@ defmodule BrickTest do
       assert actual.location == {41, 1}
       assert actual.rotation == 180
       assert actual.reflection in [true, false]
-
   end
 
-  def new_brick(), do: new()
+  test "should return points for i shape" do
+    points  = new_brick(name: :i)
+    |> points()
 
+    assert {2, 2} in points
+  end
+
+  def new_brick(attributes \\ []), do: new()
 end
