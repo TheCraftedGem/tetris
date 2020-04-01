@@ -5,4 +5,5 @@ defmodule Tetris.Points do
     |> Enum.map(fn {dx, dy} -> {dx + x, dy + y} end)
   end
 
+  defp transpose_points({x, y}), do: {y, x}
 end
